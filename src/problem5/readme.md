@@ -1,18 +1,18 @@
 # Book Management API
 
-API quản lý sách sử dụng **Node.js**, **Express**, **Prisma**, và **TypeScript**.
+API Book Management using **Node.js**, **Express**, **Prisma**, và **TypeScript**.
 
 ---
 
-## Cài đặt
+## Setup
 
-1. **Clone dự án:**
+1. **Clone project:**
     ```bash
     git clone https://github.com/winncoder/NguyenHuuThang-99TechChallenge.git
     cd NguyenHuuThang-99TechChallenge/src/problem5
     ```
 
-2. **Cài đặt các package:**
+2. **Setup packages:**
     ```bash
     npm install
     ```
@@ -60,11 +60,10 @@ npm start
 ### 2. Get a Book by ID
 #### GET /book/:id
 
-Description: Retrieve detailed information of a book by its id.
-Route Parameters:
+**Route Parameters:**
 id (number): ID of the book
 
-Response:
+**Response:**
 ```json
 {
   "id": 1,
@@ -78,14 +77,17 @@ Response:
 }
 ```
 
-Response if the book is not found:
+**Response if the book is not found:**
+```json
 {
   "error": "Book not found"
 }
+```
 
-POST /book
+### 3. Create a Book
+#### POST /book
 
-Request Body:
+**Request Body:**
 ```json
 {
   "title": "Book Title",
@@ -98,10 +100,11 @@ Request Body:
 }
 ```
 
-PUT /book/:id
-Route Parameters:
+### 4. Update a Book by ID
+#### PUT /book/:id
+**Route Parameters:**
 id (number): ID of the book
-Request Body (Optional fields to update):
+**Request Body (Optional fields to update):**
 ```json
 {
   "title": "Updated Title",
@@ -110,22 +113,21 @@ Request Body (Optional fields to update):
 }
 ```
 
+### 5. Delete a Book by ID
+#### DELETE /book/:id
 
-DELETE /book/:id
-
-Route Parameters:
+**Route Parameters:**
 id (number): ID of the book
 
-Response on successful deletion:
+**Response on successful deletion:**
 ```json
 {
   "message": "Book deleted successfully"
 }
 ```
 
-Response if the book is not found:
-```
-Edit
+**Response if the book is not found:**
+```json
 {
   "error": "Book not found"
 }
