@@ -19,7 +19,7 @@ API Book Management using **Node.js**, **Express**, **Prisma**, và **TypeScript
 
 ---
 
-## Chạy ứng dụng
+## Run Project
 
 ### Development mode:
 ```bash
@@ -41,7 +41,7 @@ npm start
   - `inStock` (boolean): `true` or `false`
   - `minPrice` (number): Minimum price
   - `maxPrice` (number): Maximum price
-  - `search` (string): Search by book title or author
+  - `search` (string): Search by book title
 - **Response:**
 ```json
 [
