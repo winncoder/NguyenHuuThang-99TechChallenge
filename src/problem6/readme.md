@@ -7,7 +7,6 @@
 - [Architecture](#architecture)
 - [ERD](#erd)
 - [Flow Diagrams](#flow-diagrams)
-- [API Design](#api-design)
 - [Why Microservices](#why-microservices)
 - [Why PostgreSQL](#why-postgreSQL)
 - [Why SocketIO](#why-socketIO)
