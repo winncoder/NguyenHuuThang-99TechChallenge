@@ -48,25 +48,6 @@ Redis
 <img src="overall.drawio.png">
 
 ## Architecture
-This system is built using Microservice Architecture to achieve scalability and maintainability. It includes:
-
-API Gateway: For authentication, authorization, and rate limiting.
-
-Microservices:
-
-User Service: Manages user information and totalScore.
-
-Score Service: Handles score updates.
-
-Task Service: Manages tasks and triggers score updates.
-
-Top10 (LeaderRank) Service: Maintains the top 10 leaderboard.
-
-Message Queues: For reliable communication between services.
-
-WebSocket (Socket.IO): For real-time leaderboard updates.
-
-PostgreSQL Database: Central storage for user data, scores, tasks, and leaderboard.
 
 Refer to the Architecture Diagram for details.
 
@@ -81,70 +62,6 @@ Refer to the ERD Diagram for the detailed schema and relationships.
 Refer to the Flowchart Diagrams for detailed steps.
 
 <img src="flowchart.drawio.png">
-
-## API Design
-### 1. Score Update
-Endpoint: POST /api/v1/score/update
-
-Description: Updates the user's score when a lesson is completed.
-
-**Request Body:**
-```json
-{
-  "userId": "string",
-  "taskId": "string"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "Score updated successfully",
-  "totalScore": "number"
-}
-```
-
-**Security:**
-
-Requires Authorization Token.
-
-Rate Limiting applied to prevent abuse.
-
-### 2. Get Leaderboard
-Endpoint: GET /api/v1/leaderboard/top10
-
-Description: Retrieves the top 10 users on the leaderboard.
-
-**Response:**
-```json
-[
-  {
-    "rank": "number",
-    "userId": "string",
-    "username": "string",
-    "totalScore": "number"
-  }
-]
-```
-
-**Cache:**
-
-Utilizes Redis Cache for quick retrieval.
-
-Cache is invalidated and updated on score changes.
-
-### 3. Get User Score
-Endpoint: GET /api/v1/score/user/{userId}
-
-Description: Retrieves the total score of a specific user.
-
-**Response:**
-```json
-{
-  "userId": "string",
-  "totalScore": "number"
-}
-```
 
 ## Why Microservices?
 Scalability: Each service can be scaled independently.
